@@ -1,6 +1,9 @@
 pipeline {
   agent any
-  stages {
+  environment {
+	PATH = "/usr/bin/mvn:$PATH"
+}
+stages {
     stage("Checkout") {
       steps {
         git credentialsId: 'nithindevopsmt', url: 'https://github.com/nithindevopsmt/VProfile.git'
